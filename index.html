@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Cerita - abdul jabar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1', // Indigo 500
+                        secondary: '#ec4899', // Pink 500
+                        dark: '#0f172a', // Slate 900
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+        
+        /* Animasi Fade In */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Line Clamp untuk excerpt */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-clamp: 3; /* standard property for newer browsers */
+            overflow: hidden;
+       
+        cd "C:\Users\Administrator\Desktop\blog abdul jabar"
+        git add .github/workflows/deploy-pages.yml
+        git commit -m "ci: add GitHub Actions Pages deploy workflow"
+        git push origin main    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                Ruang<span class="text-slate-700 dark:text-white">Cerita.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#home" class="hover:text-primary transition">Beranda</a>
+                <a href="#blog" class="hover:text-primary transition">Artikel</a>
+                <a href="#about" class="hover:text-primary transition">Tentang</a>
+                <a href="#contact" class="hover:text-primary transition">Kontak</a>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i class="fas fa-moon text-slate-600 dark:text-yellow-300"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i class="fas fa-moon text-slate-600 dark:text-yellow-300"></i>
+                </button>
+                <button id="mobile-menu-btn" class="text-slate-700 dark:text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 fade-in">
+                <div class="flex flex-col px-4 py-4 space-y-4 font-medium">
+                <a href="#home" class="block hover:text-primary">Beranda</a>
+                <a href="#blog" class="block hover:text-primary">Artikel</a>
+                <a href="anatomi.html" class="block hover:text-primary">Anatomi</a>
+                <a href="#about" class="block hover:text-primary">Tentang</a>
+                <a href="#contact" class="block hover:text-primary">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4">
+        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
+            <div class="md:w-1/2 text-center md:text-left space-y-6">
+                <div class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-2">
+                    👋 Halo, selamat datang!
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    Berbagi Cerita, <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Ide & Pengalaman</span>
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                    Sebuah ruang digital tempat saya menulis tentang teknologi, perjalanan hidup, dan hal-hal menarik lainnya yang saya temui sehari-hari. Dan saya pikir mudah mudahan karya ini bermanfaat
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#blog" class="px-8 py-3 bg-primary hover:bg-indigo-600 text-white rounded-full font-semibold transition shadow-lg shadow-primary/30 text-center">
+                        Mulai Membaca
+                    </a>
+                    <a href="#about" class="px-8 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-semibold transition text-center">
+                        Tentang Penulis
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-30 animate-pulse"></div>
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hero Image" class="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-slate-800 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-slate-100 dark:bg-slate-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Tulisan Terbaru</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Filter & Search -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+                <div class="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto no-scrollbar" id="category-filters">
+                    <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-primary text-white transition whitespace-nowrap" data-category="all">Semua</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition whitespace-nowrap" data-category="teknologi">Teknologi</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition whitespace-nowrap" data-category="lifestyle">Gaya Hidup</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition whitespace-nowrap" data-category="travel">Travel</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition whitespace-nowrap" data-category="materi">materi</button>
+                    
+                </div>
+                <div class="relative w-full md:w-72">
+                    <input type="text" id="search-input" placeholder="Cari artikel..." class="w-full px-4 py-2 rounded-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <i class="fas fa-search absolute right-4 top-3 text-slate-400"></i>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Posts will be injected here via JS -->
+            </div>
+
+            <!-- Empty State (Hidden by default) -->
+            <div id="empty-state" class="hidden text-center py-10">
+                <i class="fas fa-search text-4xl text-slate-400 mb-3"></i>
+                <p class="text-slate-500">Artikel tidak ditemukan.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto max-w-5xl bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-2/5 h-64 md:h-auto relative">
+                    <img src="WhatsApp%20Image%202025-12-19%20at%2015.02.52%20(1).jpeg" alt="Profile" class="absolute inset-0 w-full h-full object-cover" height="300" width="200">
+                    <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                </div>
+                <div class="md:w-3/5 p-8 md:p-12">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Tentang Penulis</h3>
+                    <h2 class="text-3xl font-bold mb-6">moh abdul jabbar assauri</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                        Hai! Saya Abdul jabbar , saya adalah seorang mahasiswa dari stkip pasundan semester 1 kelas 1i pjkr yang memiliki cita cita untuk menjadi seorang developer dan suka menggeluti di bidang it dan ilmu keolahragaan
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-slate-800 dark:text-white">0+</span>
+                            <span class="text-sm text-slate-500">Tahun Pengalaman</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-slate-800 dark:text-white">0+</span>
+                            <span class="text-sm text-slate-500">Artikel Ditulis</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-100 dark:bg-slate-800/50">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Hubungi Saya</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-10">Punya pertanyaan atau ingin berkolaborasi? Kirimkan pesan di bawah ini.</p>
+            
+            <form id="contact-form" class="space-y-4 text-left bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Nama</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Subjek</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Pesan</label>
+                    <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-primary hover:bg-indigo-600 text-white font-bold rounded-lg transition shadow-lg transform active:scale-95">
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">RuangCerita.</h3>
+            <p class="text-slate-400 mb-6 max-w-md mx-auto">Menulis adalah cara terbaik untuk merayakan kehidupan. Terima kasih sudah berkunjung.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-slate-400 hover:text-white transition">Home</a>
+                <a href="#" class="text-slate-400 hover:text-white transition">Blog</a>
+                <a href="#" class="text-slate-400 hover:text-white transition">About</a>
+                <a href="#" class="text-slate-400 hover:text-white transition">Contact</a>
+            </div>
+            <p class="text-slate-600 text-sm">&copy; 2025 Ruang Cerita. Dibuat dengan ❤️.</p>
+        </div>
+    </footer>
+
+    <!-- Article Modal (Hidden by default) -->
+    <div id="article-modal" class="fixed inset-0 z-[60] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/70 transition-opacity backdrop-blur-sm" id="modal-backdrop"></div>
+
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-3xl">
+                <!-- Close Button -->
+                <button id="close-modal" class="absolute right-4 top-4 z-10 w-10 h-10 rounded-full bg-black/50 text-white hover:bg-black/70 flex items-center justify-center transition">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <!-- Modal Content -->
+                <div id="modal-content-area">
+                    <!-- Dynamic content will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-[70] bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Pesan terkirim!</span>
+    </div>
+    <!-- JavaScript -->
+    <script>
+        // --- Data Blog Dummy ---
+        const blogPosts = [
+            {
+                id: 1,
+                title: "Memulai Belajar Web Development di 2025",
+                category: "teknologi",
+                date: "19 desember 2025",
+                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                excerpt: "Panduan lengkap roadmap belajar coding dari nol hingga mahir. HTML, CSS, JavaScript dan framework modern.",
+                content: `
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Teknologi</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Memulai Belajar Web Development di 2024</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 12 Okt 2024</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Dunia pengembangan web terus berubah dengan cepat. Apa yang relevan tahun lalu mungkin sudah usang hari ini. Dalam artikel ini, kita akan membahas roadmap belajar web development yang efektif untuk tahun 2024.</p>
+                            <h3 class="text-xl font-bold mb-2">1. Fondasi Dasar</h3>
+                            <p class="mb-4">Jangan melompat langsung ke Framework! Pastikan Anda menguasai HTML semantik, CSS modern (Flexbox & Grid), dan JavaScript dasar (ES6+).</p>
+                            <h3 class="text-xl font-bold mb-2">2. Pilih Framework</h3>
+                            <p class="mb-4">Setelah dasar kuat, pilihlah React, Vue, atau Angular. Saat ini React masih menjadi pemimpin pasar dengan ekosistem yang sangat luas.</p>
+                            <p>Konsistensi adalah kunci. Luangkan waktu minimal 1 jam setiap hari untuk coding.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 2,
+                title: "Menikmati Senja di Pantai Kutang",
+                category: "travel",
+                date: "19 desember 2025",
+                image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                excerpt: "Cerita perjalanan singkat melepas penat di Pulau Dewata. Menikmati ombak, pasir putih, dan matahari terbenam.",
+                content: `
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Travel</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Menikmati Senja di Pantai Kuta</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 05 Sep 2024</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Bali tidak pernah gagal memanjakan mata. Minggu lalu saya memutuskan untuk mengambil cuti singkat dan terbang ke Denpasar.</p>
+                            <p class="mb-4">Suasana sore di Kuta sangat magis. Warna langit berubah dari biru cerah menjadi gradasi oranye dan ungu yang memukau. Suara deburan ombak memberikan ketenangan tersendiri.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 3,
+                title: "Tips Produktivitas modol",
+                category: "lifestyle",
+                date: "19 desembesr 2025",
+                image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                excerpt: "modol dari rumah bisa penuh tantangan. Berikut tips mengatur waktu dan ruang kerja agar tetap fokus.",
+                content: `
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Gaya Hidup</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Tips Produktivitas WFH</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 22 Agu 2024</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">modol menjadi norma baru. Namun, gangguan di rumah seringkali membuyarkan konsentrasi.</p>
+                            <ul class="list-disc pl-5 mb-4 space-y-2">
+                                <li><strong>Buat Ruang Kerja Khusus:</strong> Jangan bekerja di kasur!</li>
+                                <li><strong>Tetapkan Jam Kerja:</strong> Disiplin waktu mulai dan selesai.</li>
+                                <li><strong>Gunakan Teknik Pomodoro:</strong> Fokus 25 menit, istirahat 5 menit.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 4,
+                title: "Review Gadget: Kamera Mirrorless",
+                category: "teknologi",
+                date: "19 desember 2025",
+                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                excerpt: "Apakah kamera mirrorless cocok untuk pemula? Simak ulasan lengkap kelebihan dan kekurangannya.",
+                content: `
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Teknologi</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Review Gadget: Kamera Mirrorless</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 10 Jul 2024</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Bagi pemula fotografi, memilih gear yang tepat sangat membingungkan. Mirrorless menawarkan bodi yang ringkas dengan kualitas setara DSLR.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 5,
+                title: "Hidden Gem Coffee cimahi",
+                category: "lifestyle",
+                date: "19 desember 2025",
+                image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                excerpt: "Rekomendasi tempat ngopi yang tenang dan estetik di cimahi, cocok untuk  ghibah.",
+                content: `
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Gaya Hidup</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Hidden Gem Coffee Shop cimahi</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 02 Jun 2024</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Mencari ketenangan di hiruk pikuk Jakarta itu sulit, tapi coffee shop ini menawarkan oase yang menyegarkan.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 6,
+                title: "Pendakian Gunung gunung masigit",
+                category: "travel",
+                date: "19 desember 2025",
+                image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                excerpt: "Golden sunrise terbaik di bandung barat. Catatan perjalanan pendakian Gunung Prau via Patak Banteng.",
+                content: `
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Travel</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Pendakian Gunung masigit</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 15 Mei 2024</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Gunung Prau dikenal ramah bagi pemula namun menawarkan pemandangan kelas dunia. Treknya singkat tapi cukup menanjak.</p>
+                        </div>
+                    </div>
+                `
+                },
+                {
+                id: 7,
+                title: "Sejarah dan Filsafat Olahraga",
+                category: "materi",
+                date: "22 Desember 2025",
+                image: "anatomi-files/sejarah-filsafat.jpg",
+                excerpt: "Sejarah dan filsafat pendidikan dalam konteks keolahragaan.",
+                content: `
+                    <img src="anatomi-files/sejarah-filsafat.jpg" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Materi Keolahragaan</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Sejarah dan Filsafat Olahraga</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 22 Desember 2025</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Sejarah dan filsafat pendidikan dalam konteks keolahragaan.</p>
+                            <p class="mb-4"><a href="anatomi-files/materi-intro.md" class="text-primary font-semibold">Unduh materi (Markdown)</a></p>
+                        </div>
+                    </div>
+                `
+                },
+                {
+                id: 8,
+                title: "Filsafat Pendidikan",
+                category: "materi",
+                date: "22 Desember 2025",
+                image: "anatomi-files/aristoteles.jpg",
+                excerpt: "Bagaimana kita mengetahui tentang esensi pendidikan.",
+                content: `
+                    <img src="anatomi-files/aristoteles.jpg" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Materi Kependidikan</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Filsafat Pendidikan</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 22 Desember 2025</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Bagaimana kita mengetahui tentang esensi pendidikan.</p>
+                            <p class="mb-4"><a href="anatomi-files/slide-outline.pdf" class="text-primary font-semibold">Unduh slide (PDF)</a></p>
+                        </div>
+                    </div>
+                `
+                },
+                {
+                id: 9,
+                title: "Materi Anatomi",
+                category: "materi",
+                date: "22 Desember 2025",
+                image: "anatomi-files/anatomi.jpg",
+                excerpt: "Kumpulan file materi anatomi.",
+                content: `
+                    <img src="anatomi-files/anatomi.jpg" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Materi Anatomi</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Materi Anatomi</h2>
+                        <div class="text-slate-500 mb-6 text-sm"><i class="far fa-calendar-alt mr-2"></i> 22 Desember 2025</div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+                            <p class="mb-4">Kumpulan file materi anatomi. Letakkan file di folder <strong>anatomi-files</strong>.</p>
+                            <p class="mb-4"><a href="Materi Pengantar Anatomi Manusia.pdf" class="text-primary font-semibold">Unduh materi (Markdown)</a></p>
+                            <p class="mb-4"><a href="Bpk. Ricky W_Struktur Sel dan Sistem Kerja Sel.pdf" class="text-primary font-semibold">Unduh materi (Markdown)</a></p>
+                            <p class="mb-4"><a href="anatomi-files/slide-outline.pdf" class="text-primary font-semibold">Unduh slide (PDF)</a></p>
+                        </div>
+                    </div>
+                `
+                }
+        ];
+
+        // --- DOM Elements ---
+        const blogGrid = document.getElementById('blog-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('search-input');
+        const emptyState = document.getElementById('empty-state');
+        const modal = document.getElementById('article-modal');
+        const modalContent = document.getElementById('modal-content-area');
+        const closeModal = document.getElementById('close-modal');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggleBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+        const contactForm = document.getElementById('contact-form');
+        const toast = document.getElementById('toast');
+        const continueWidget = document.getElementById('continue-widget');
+        const continueBtn = document.getElementById('continue-btn');
+
+        // --- Pagination State ---
+        let postsPerPage = 3; // jumlah item per klik "Lanjutkan"
+        let currentPage = 1;
+        let filteredPosts = blogPosts.slice();
+
+        // --- Render Posts ---
+        function renderPosts(posts) {
+            blogGrid.innerHTML = '';
+            
+            if (posts.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            posts.forEach((post, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full fade-in';
+                card.style.animationDelay = `${index * 100}ms`;
+                
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden group">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide text-primary shadow-sm">
+                            ${post.category}
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs text-slate-400 mb-2 flex items-center">
+                            <i class="far fa-calendar-alt mr-2"></i> ${post.date}
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-slate-800 dark:text-white leading-tight hover:text-primary transition cursor-pointer" onclick="openModal(${post.id})">${post.title}</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3 flex-grow">${post.excerpt}</p>
+                        <button onclick="openModal(${post.id})" class="text-primary font-semibold hover:text-secondary transition text-sm flex items-center mt-auto">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                `;
+                blogGrid.appendChild(card);
+            });
+        }
+
+        // --- Paginated Render ---
+        function renderPaginated() {
+            const end = currentPage * postsPerPage;
+            const toShow = filteredPosts.slice(0, end);
+            renderPosts(toShow);
+            updateContinueWidgetVisibility();
+        }
+
+        function updateContinueWidgetVisibility() {
+            if (filteredPosts.length > currentPage * postsPerPage) {
+                continueWidget.classList.remove('hidden');
+            } else {
+                continueWidget.classList.add('hidden');
+            }
+        }
+
+        // --- Filter Logic ---
+        function filterPosts() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+
+            filteredPosts = blogPosts.filter(post => {
+                const matchSearch = post.title.toLowerCase().includes(searchTerm) || post.excerpt.toLowerCase().includes(searchTerm);
+                const matchCategory = activeCategory === 'all' || post.category === activeCategory;
+                return matchSearch && matchCategory;
+            });
+
+            // reset pagination
+            currentPage = 1;
+            renderPaginated();
+        }
+
+        // --- Event Listeners Filter & Search ---
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white');
+                    b.classList.add('bg-white', 'dark:bg-slate-700');
+                });
+                btn.classList.remove('bg-white', 'dark:bg-slate-700');
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                filterPosts();
+            });
+        });
+
+        searchInput.addEventListener('input', filterPosts);
+
+        // --- Modal Logic ---
+        window.openModal = function(id) {
+            const post = blogPosts.find(p => p.id === id);
+            if (!post) return;
+
+            modalContent.innerHTML = post.content;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModalFunc() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        closeModal.addEventListener('click', closeModalFunc);
+        document.getElementById('modal-backdrop').addEventListener('click', closeModalFunc);
+
+        // --- Mobile Menu ---
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Dark Mode ---
+        // Check local storage or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.theme = 'dark';
+                } else {
+                    localStorage.theme = 'light';
+                }
+            });
+        });
+
+        // --- Contact Form Toast ---
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate sending
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Mengirim...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+                contactForm.reset();
+                
+                // Show Toast
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }, 1500);
+        });
+
+        // --- Initialize ---
+        // initial filtered list + render first page
+        filteredPosts = blogPosts.slice();
+        renderPaginated();
+
+        // Continue button behavior
+        continueBtn.addEventListener('click', () => {
+            currentPage += 1;
+            renderPaginated();
+            // scroll to the newly loaded area (smooth)
+            const cards = document.querySelectorAll('#blog-grid > div');
+            if (cards.length) {
+                const last = cards[Math.min(cards.length - 1, currentPage * postsPerPage - 1)];
+                if (last) last.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+    </script>
+</body>
+</html>
