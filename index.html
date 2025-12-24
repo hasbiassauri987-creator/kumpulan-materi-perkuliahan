@@ -182,38 +182,6 @@
         </div>
     </section>
 
-    <!-- Anatomi Section -->
-    <section id="anatomi" class="py-16 px-4 bg-white dark:bg-slate-900/40">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold mb-2">Materi Anatomi</h2>
-                <p class="text-slate-600 dark:text-slate-300">Kumpulan file materi anatomi. Letakkan file di folder <strong>anatomi-files</strong>.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow">
-                    <h3 class="text-xl font-semibold mb-2">Pengantar Anatomi (Markdown)</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 mb-3 line-clamp-3">Ringkasan pengantar anatomi. Klik untuk membuka atau mengunduh file markdown.</p>
-                    <a href="anatomi-files/materi-intro.md" class="text-primary font-semibold">Buka / Unduh</a>
-                </div>
-
-                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow">
-                    <h3 class="text-xl font-semibold mb-2">Slide & Outline (PDF)</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 mb-3 line-clamp-3">Slide presentasi sebagai placeholder. Ganti dengan file PDF asli.</p>
-                    <a href="anatomi-files/slide-outline.pdf" class="text-primary font-semibold">Buka / Unduh</a>
-                </div>
-
-                <div class="md:col-span-2 p-6 bg-white dark:bg-slate-800 rounded-2xl shadow">
-                    <h3 class="text-xl font-semibold mb-2">Petunjuk Menambahkan Materi</h3>
-                    <ol class="list-decimal pl-5 mt-2 text-sm text-slate-600 dark:text-slate-300 space-y-2">
-                        <li>Salin file materi (PDF, gambar, markdown) ke folder <strong>anatomi-files</strong>.</li>
-                        <li>Jika ingin menambah daftar otomatis, beri tahu saya untuk menambahkan JavaScript yang membaca daftar file (note: perlu server jika ingin listing folder secara dinamis).</li>
-                        <li>Untuk menampilkan gambar di halaman, gunakan tag &lt;img src="anatomi-files/nama-file.jpg"&gt; di bagian ini atau di artikel.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 px-4">
@@ -321,15 +289,6 @@
         <i class="fas fa-check-circle"></i>
         <span id="toast-message">Pesan terkirim!</span>
     </div>
-
-    <!-- Continue Widget (Lanjutkan halaman) -->
-    <div id="continue-widget" class="fixed bottom-6 right-6 z-[80] hidden">
-        <button id="continue-btn" class="flex items-center gap-3 px-5 py-3 bg-primary hover:bg-indigo-600 text-white rounded-full shadow-lg focus:outline-none">
-            <i class="fas fa-arrow-down"></i>
-            <span>Lanjutkan</span>
-        </button>
-    </div>
-
     <!-- JavaScript -->
     <script>
         // --- Data Blog Dummy ---
